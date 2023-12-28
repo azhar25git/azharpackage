@@ -11,6 +11,13 @@
         </ul>
     </div>
 @endif
+<div class="row">
+    <div class="col-lg-12 margin-tb">
+        <div class="mx-auto w-50 my-2">
+            <a class="btn btn-success" href="{{ route('books.index') }}"> All Books </a>
+        </div>
+    </div>
+</div>
 <div class="mx-auto col-md-8">
 
     <form action="{{ (empty($book->id) ? route('books.store') : route('books.update', $book->id))}}" method="POST">
