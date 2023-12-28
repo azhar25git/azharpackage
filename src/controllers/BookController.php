@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use Azhar25git\AzharPackage\Requests\BookStoreRequest;
 use DB;
 
-class TaskController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
