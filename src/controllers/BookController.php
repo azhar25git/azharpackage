@@ -19,7 +19,7 @@ class BookController extends Controller
     {
         $books = Book::orderBy('created_at', 'DESC')->limit(20)->get();
 
-        return view('azhar-package.books');
+        return view('azhar-package::books.index', compact('books'));
     }
 
     /**
@@ -60,7 +60,7 @@ class BookController extends Controller
         }
 
         // return var_export($users);
-        return "Book not assigned.";
+        return redirect()->route('books.index');
     }
 
     /**

@@ -16,11 +16,11 @@
     </div>
   </div>
 @endif
-<form action="POST" class="py-4 px-2 bg-white-500">
+<form action="POST" class="py-4 px-2 bg-white-500" action="{{ (empty($book) ? route('books.store') : route('books.update', $book))}}">
     @csrf
-    <input type="text" name="title" value="{{$title}}">
-    <input type="text" name="author" value="{{$author}}">
-    <input type="text" name="description" value="{{$description}}">
+    <input type="text" name="title" value="{{$book->title ?? ''}}">
+    <input type="text" name="author" value="{{$book->author ?? ''}}">
+    <input type="text" name="description" value="{{$book->description ?? ''}}">
     <input type="submit" placeholder="Save">
 </form>
 @endsection
