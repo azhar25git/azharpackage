@@ -6,7 +6,7 @@
     <p>{{ $message }}</p>
 </div>
 @endif
-<table class="table table-bordered">
+<table class="table table-bordered mx-auto w-50">
     <tr>
         <th>ID</th>
         <th>Title</th>
