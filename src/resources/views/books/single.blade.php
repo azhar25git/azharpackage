@@ -12,13 +12,13 @@
     </div>
 @endif
 <div class="row">
-    <div class="col-lg-8 margin-tb">
+    <div class="w-50 margin-tb">
         <div class="mx-auto w-50 my-2">
             <a class="btn btn-success" href="{{ route('books.index') }}"> All Books </a>
         </div>
     </div>
 </div>
-<div class="mx-auto col-lg-8">
+<div class="mx-auto w-50">
 
     <form action="{{ (empty($book->id) ? route('books.store') : route('books.update', $book->id))}}" method="POST">
         @csrf
