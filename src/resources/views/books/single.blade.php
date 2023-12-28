@@ -14,7 +14,9 @@
 
 <form action="{{ (empty($book->id) ? route('books.store') : route('books.update', $book->id))}}" method="POST">
     @csrf
-    @method(empty($book->id)?'POST':'PUT')
+    @if (!empty($book->id))
+        @method('PUT')
+    @endif
   
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
