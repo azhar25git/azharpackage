@@ -3,17 +3,15 @@
 namespace Azhar25git\AzharPackage;
 
 use Azhar25git\AzharPackage\Book;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Azhar25git\AzharPackage\BookStoreRequest;
-use DB;
 
 class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -25,7 +23,7 @@ class BookController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -36,7 +34,7 @@ class BookController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function store(BookStoreRequest $request)
     {
@@ -49,15 +47,14 @@ class BookController extends Controller
         
         $newBook->save();
 
-        // return var_export($users);
         return redirect()->route('books.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param  Azhar25git\AzharPackage\Book  $book
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Book $book)
     {
@@ -67,8 +64,8 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param  Azhar25git\AzharPackage\Book  $book
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Book $book)
     {
@@ -78,9 +75,9 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param  Azhar25git\AzharPackage\BookStoreRequest  $request
+     * @param  Azhar25git\AzharPackage\Book  $book
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function update(BookStoreRequest $request, Book $book)
     {
@@ -98,8 +95,8 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param  Azhar25git\AzharPackage\Book  $book
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function destroy(Book $book)
     {
