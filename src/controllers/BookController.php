@@ -60,7 +60,7 @@ class BookController extends Controller
         }
 
         // return var_export($users);
-        return redirect()->route('books.index');
+        return redirect()->route('azhar-package::books.index');
     }
 
     /**
@@ -113,7 +113,7 @@ class BookController extends Controller
             DB::rollBack();
         }
         
-        return redirect()->route('books.index');
+        return redirect()->route('azhar-package::books.index');
     }
 
     /**
@@ -127,6 +127,6 @@ class BookController extends Controller
         if($book) {
             $book->delete();
         }
-        return redirect()->route('books.index');
+        return redirect()->route('azhar-package::books.index');
     }
 }
