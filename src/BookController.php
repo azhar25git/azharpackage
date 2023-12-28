@@ -40,22 +40,14 @@ class BookController extends Controller
      */
     public function store(BookStoreRequest $request)
     {
-        $validated = $request->safe()->all();
+        $validated = $request->validated();
 
-        DB::beginTransaction();
-        try {
-            $newBook = new Book;
-            $newBook->title = $validated['title'];
-            $newBook->description = $validated['description'];
-            $newBook->author = $validated['author'];
-            
-            $newBook->save();
-        }
-
-        catch (\Exception $e) {
-            // Whoopsy
-            DB::rollBack();
-        }
+        $newBook = new Book;
+        $newBook->title = $validated['title'];
+        $newBook->description = $validated['description'];
+        $newBook->author = $validated['author'];
+        
+        $newBook->save();
 
         // return var_export($users);
         return redirect()->route('books.index');
@@ -92,24 +84,13 @@ class BookController extends Controller
      */
     public function update(BookStoreRequest $request, Book $book)
     {
-        $validated = $validated = $request->safe()->all();
-
-        DB::beginTransaction();
-        try {
-            $existingBook = $book;
-            $existingBook->title = $validated['title'];
-            $existingBook->author = $validated['author'];
-            $existingBook->description = $validated['description'];
-            
-            $existingBook->save();
-
-            DB::commit();
-        }
-
-        catch (\PDOException $e) {
-            // Whoopsy
-            DB::rollBack();
-        }
+        $validated = $request->validated();
+        $existingBook = $book;
+        $existingBook->title = $validated['title'];
+        $existingBook->author = $validated['author'];
+        $existingBook->description = $validated['description'];
+        
+        $existingBook->save();
         
         return redirect()->route('books.index');
     }
