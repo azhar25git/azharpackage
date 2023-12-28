@@ -8,6 +8,7 @@
         <th>Author</th>
         <th> - </th>
     </tr>
+    @foreach($books as $book)
     <tr>
         <td>{{$book->id}}</td>
         <td>{{$book->title}}</td>
@@ -20,5 +21,6 @@
             </form>
         </td>
     </tr>
+    @endforeach
 </table>
 @endsection
