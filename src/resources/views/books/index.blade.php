@@ -1,7 +1,7 @@
 @extends('azhar-package::layout')
 @section('page-title', 'Books')
 @section('content')
-<table>
+<table class="flex items-center">
     <tr>
         <th>ID</th>
         <th>Title</th>
