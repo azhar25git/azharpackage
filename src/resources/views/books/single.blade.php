@@ -12,7 +12,7 @@
     </div>
 @endif
 
-<form action="{{ (empty($book->id) ? route('books.store') : route('books.update', $book->id))}}" method="POST">
+<form action="{{ (empty($book->id) ? route('books.store') : route('books.update', $book->id))}}" method="{{empty($book->id)?'POST':'PUT'}}">
     @csrf
   
      <div class="row">
