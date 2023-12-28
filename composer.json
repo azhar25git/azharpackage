@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Azhar25git\\AzharPackage\\": "src"
+            "Azhar25git\\AzharPackage\\": "vendor/azhar25git/azhar-package/src/"
         }
     },
     "autoload-dev": {
