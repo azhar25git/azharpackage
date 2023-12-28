@@ -12,7 +12,7 @@
     </div>
 @endif
 <div class="row">
-    <div class="w-50 margin-tb">
+    <div class="w-50 mx-auto margin-tb">
         <div class="mx-auto w-50 my-2">
             <a class="btn btn-success" href="{{ route('books.index') }}"> All Books </a>
         </div>
