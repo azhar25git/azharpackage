@@ -50,8 +50,6 @@ class BookController extends Controller
             $newBook->author = $validated['author'];
             
             $newBook->save();
-
-            return $newBook;
         }
 
         catch (\Exception $e) {
