@@ -19,9 +19,18 @@
 <div class="w-full max-w-xs">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" action="{{ (empty($book) ? route('books.store') : route('books.update', $book->id))}}">
         @csrf
-        <input type="text" name="title" value="{{$book->title ?? ''}}" placeholder="Title">
-        <input type="text" name="author" value="{{$book->author ?? ''}}" placeholder="Author">
-        <input type="text" name="description" value="{{$book->description ?? ''}}" placeholder="Description">
+        <label for="">
+            Title
+            <input type="text" name="title" value="{{$book->title ?? ''}}" placeholder="Title">
+        </label>
+        <label for="">
+            Author
+            <input type="text" name="author" value="{{$book->author ?? ''}}" placeholder="Author">
+        </label>
+        <label for="">
+            Description
+            <input type="text" name="description" value="{{$book->description ?? ''}}" placeholder="Description">
+        </label>
         <input type="submit" placeholder="Save">
     </form>
 
