@@ -1,6 +1,6 @@
 <?php
 
-namespace Azhar25git\AzharPackage\Controllers;
+namespace Azhar25git\AzharPackage\controllers;
 
 use Azhar25git\AzharPackage\Models\Book;
 use Illuminate\Http\Request;

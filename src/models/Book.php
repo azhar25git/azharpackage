@@ -1,6 +1,6 @@
 <?php
 
-namespace Azhar25git\AzharPackage\Models;
+namespace Azhar25git\AzharPackage\models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
