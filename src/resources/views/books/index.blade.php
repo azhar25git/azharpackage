@@ -8,7 +8,7 @@
 @endif
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-right">
+        <div class="mx-auto w-50 my-2">
             <a class="btn btn-success" href="{{ route('books.create') }}"> Add New +</a>
         </div>
     </div>
