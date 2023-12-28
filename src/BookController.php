@@ -1,8 +1,8 @@
 <?php
 
-namespace Azhar25git\AzharPackage\controllers;
+namespace Azhar25git\AzharPackage;
 
-use Azhar25git\AzharPackage\Models\Book;
+use Azhar25git\AzharPackage\Book;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Azhar25git\AzharPackage\Requests\BookStoreRequest;

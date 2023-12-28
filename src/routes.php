@@ -1,6 +1,6 @@
 <?php
 
-use Azhar25git\AzharPackage\Controllers\BookController;
+use Azhar25git\AzharPackage\BookController;
 use Illuminate\Support\Facades\Route;
 
 
