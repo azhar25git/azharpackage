@@ -17,7 +17,7 @@
   </div>
 @endif
 <div class="w-full max-w-xs">
-    <form action="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="{{ (empty($book) ? route('azhar-package::books.store') : route('azhar-package::books.update', ['book'=>$book->id]))}}">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="{{ (empty($book) ? route('azhar-package::books.store') : route('azhar-package::books.update', ['book'=>$book->id]))}}">
         @csrf
         <input type="text" name="title" value="{{$book->title ?? ''}}" placeholder="Title">
         <input type="text" name="author" value="{{$book->author ?? ''}}" placeholder="Author">
