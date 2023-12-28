@@ -2,37 +2,42 @@
 @section('page-title', 'Book - ' . ($title ?? 'New'))
 @section('content')
 @if ($errors->any())
-  <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-    <svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-    </svg>
-    <span class="sr-only">Danger</span>
-    <div>
-        <ul class="mt-1.5 list-disc list-inside">
+    <div class="alert alert-danger">
+        There were some problems with your input.<br><br>
+        <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
-      </ul>
+        </ul>
     </div>
-  </div>
 @endif
-<div class="w-full max-w-xs">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" action="{{ (empty($book) ? route('books.store') : route('books.update', $book->id))}}">
-        @csrf
-        <label for="">
-            Title
-            <input type="text" name="title" value="{{$book->title ?? ''}}" placeholder="Title">
-        </label>
-        <label for="">
-            Author
-            <input type="text" name="author" value="{{$book->author ?? ''}}" placeholder="Author">
-        </label>
-        <label for="">
-            Description
-            <input type="text" name="description" value="{{$book->description ?? ''}}" placeholder="Description">
-        </label>
-        <input type="submit" placeholder="Save">
-    </form>
 
-</div>
+<form action="{{ (empty($book->id) ? route('books.store') : route('books.update', $book->id))}}" method="POST">
+    @csrf
+  
+     <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Title:</strong>
+                <input type="text" name="title" class="form-control" placeholder="Title">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Author:</strong>
+                <input type="text" name="author" class="form-control" placeholder="Author">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Description:</strong>
+                <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+   
+</form>
 @endsection
