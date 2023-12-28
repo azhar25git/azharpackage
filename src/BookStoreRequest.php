@@ -1,6 +1,6 @@
 <?php
 
-namespace Azhar25git\AzharPackage\Requests;
+namespace Azhar25git\AzharPackage;
 
 use Illuminate\Foundation\Http\FormRequest;
 
